@@ -1,0 +1,12 @@
+  <mat-toolbar color="primary" class="app-header">
+    <div><a routerLink="/"  class="positronx">MyBlog</a></div>
+    <span class="nav-tool-items">
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active"  >Home</a>
+      <a mat-button mat-raised-button routerLink="/dashboard" routerLinkActive="active" *ngIf= 'isAuthenticated'>Dashboard</a>
+      <a mat-button mat-raised-button routerLink="/about" routerLinkActive="active">About</a>
+      <a mat-button mat-raised-button routerLink="/login" routerLinkActive="active" *ngIf= '!isAuthenticated'>Login</a>
+      <a mat-button mat-raised-button *ngIf= 'isAuthenticated' (click)="onLogout()">Logout</a>
+    </span>
+  </mat-toolbar>
+
+  

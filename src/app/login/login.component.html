@@ -1,0 +1,25 @@
+<div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Log In</mat-card-title>
+      </mat-card-header>
+      <div class="alert alert-danger" role="alert" *ngIf = 'loginError'>
+        {{loginError}}
+      </div>
+      <form class="example-form" #loginForm ="ngForm" (ngSubmit)="onLogin(loginForm)">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email" type="email" ngModel name="email" required>
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Password" type='password' ngModel name="password" required minlength="6">
+          </mat-form-field>
+        </mat-card-content>
+        <button mat-stroked-button color="accent" class="btn-block" [disabled]="!loginForm.valid">Log-in</button>
+        <button mat-stroked-button color="accent" class="btn-block" routerLink="/signup">Sign-up</button>
+      </form>
+    </mat-card>
+  
+  </div>

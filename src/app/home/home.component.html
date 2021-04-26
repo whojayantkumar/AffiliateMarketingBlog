@@ -1,0 +1,20 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-4" *ngFor = "let post of loadedPosts.reverse()" >
+        <mat-card class="example-card" >
+            <mat-card-header>
+              <mat-card-title>{{(post.title.length>60)? (post.title |slice:0:60)+'..':(post.title)}}</mat-card-title>
+              <mat-card-subtitle>{{post.category }}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{post.imageUrl}}" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <p>
+                {{(post.content.length > 160)? (post.content | slice:0:160)+'..':(post.content)}}
+              </p>
+            </mat-card-content>
+              <a mat-button target="_blank" href="{{post.affiliateUrl}}">Buy From Amazon</a>
+          </mat-card>
+      </div>
+    </div>
+  </div>

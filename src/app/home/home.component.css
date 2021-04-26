@@ -1,0 +1,10 @@
+.example-card {
+    max-width: 400px;
+    margin-top: 80px;
+    margin-left: 10px;
+  }
+  img{
+    max-width: 350px;
+    max-height: 300px;
+  }
+  
